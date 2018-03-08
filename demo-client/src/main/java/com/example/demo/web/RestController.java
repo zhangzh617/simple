@@ -18,7 +18,7 @@ public class RestController {
 
 		//return "call result:" + demoService.hello();
 		User user = demoService.getUser(1);
-		return "user name:" + user.getName()+",pwd:"+user.getPassword();
+		return "user name:" + user.getUserName()+",pwd:"+user.getPassword();
 
 	}
 

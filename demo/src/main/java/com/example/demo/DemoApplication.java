@@ -6,9 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import com.example.demo.annotation.EnableDemoConfiguration;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableAsync
+@EnableDemoConfiguration
 @MapperScan("com.example.demo.dao")
 public class DemoApplication {
 

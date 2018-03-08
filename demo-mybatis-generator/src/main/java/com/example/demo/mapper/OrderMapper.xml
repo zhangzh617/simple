@@ -334,5 +334,5 @@
       MODIFIED_USER = #{modifiedUser,jdbcType=VARCHAR},
       IS_DELETE = #{isDelete,jdbcType=INTEGER}
     where ORDER_ID = #{orderId,jdbcType=BIGINT}
-  </update>
+  </update>  
 </mapper>

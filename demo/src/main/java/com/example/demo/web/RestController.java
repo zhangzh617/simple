@@ -6,6 +6,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.demo.DemoService;
 import com.example.demo.model.User;
 import com.example.demo.service.TaskService;
 import com.example.demo.service.UserService;
@@ -22,6 +23,9 @@ public class RestController {
 	@Resource
 	UserService userService;
 
+	@Resource
+	DemoService demoService;
+	
 	@GetMapping("/hello")
 	public String hello() throws Exception {
 		String services = "Services: " + discoveryClient.getServices();
@@ -34,6 +38,12 @@ public class RestController {
 	@GetMapping("/getUser/{id}")
 	public User getUser(@PathVariable("id") Integer userId) {
 		return userService.getUser(userId);
+	}
+	
+	@GetMapping("/start")
+	public String start() throws Exception {
+		return demoService.wrap(" start ");
+
 	}
 
 }
